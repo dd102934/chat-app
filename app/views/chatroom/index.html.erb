@@ -1,61 +1,31 @@
-<h2 class="ui center aligned icon header">
-  <i class="circular paper plane outline orange icon"></i>
-  Let's' chat
-</h2>
-
+<h4 class="ui center aligned medium icon header">
+  <i class="circular orange coffee icon"></i>
+  Say Something
+</h4>
 
 <div class="ui two column grid">
   <div class="twelve wide column">
     <div class="ui fluid raised card chatbox">
       <div class="content" id="messages">
-        <div class="ui feed">
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <a>Elliot Fu</a> added <a>Jenny Hess</a> as a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <a>Stevie Feliciano</a> added <a>Elliot Fu</a> as a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <a>Helen Troy</a> added <a>Christian Rocha</a> as a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <em>Christian Rocha</em> Test: comments
-              </div>
-            </div>
-          </div>
+        <div class="ui feed" id="message-container">
+          <%= render @messages %>
         </div>
       </div>
       <div class="extra content">
-        <form class="ui reply form">
+        <%= form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path, remote: true) do |f| %>
           <div class="field">
-            <div class="ui flued icon input">
-              <input type="text" placeholder="メッセージを入力してください...">
-              <i class="bordered inverted orange  edit icon"></i>
+            <div class="ui fluid icon input">
+              <%= f.text_field :body %>
+              <%= f.button '<i class="bordered inverted orange edit icon"></i>'.html_safe %>
             </div>
           </div>
-        </form>
-        </div>   
+        <% end %>
       </div>
-    </div> 
+    </div>
   </div>
 
-
   <div class="four wide column">
-     <div class="ui fluid raised card chatbox">
+    <div class="ui fluid raised card chatbox">
       <div class="content">
         <div class="ui inverted vertical menu">
           <a class="active item">
@@ -69,6 +39,6 @@
           </a>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
 </div>
