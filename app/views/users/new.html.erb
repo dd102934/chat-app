@@ -1,0 +1,33 @@
+<h2 class="ui center aligned large header">
+  ようこそ！ - <em>Let's Chat!</em>
+</h2>
+
+<h4 class="ui center aligned medium icon header">
+  <i class="circular blue power off tiny icon"></i>
+</h4>
+<div class="ui placeholder segment">
+    <%= form_for(@user, html: {class: "ui form", role: "form"}) do |f| %>
+      <div class="field">
+        <%= f.label :username %>
+        <div class="ui left icon input">
+          <%= f.text_field :username, placeholder: "Username" %>
+          <i class="user icon"></i>
+        </div>
+      </div>
+      <div class="field">
+        <%= f.label :password, "パスワード" %>
+        <div class="ui left icon input">
+          <%= f.password_field :password, placeholder: "Password" %>
+          <i class="lock icon"></i>
+        </div>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation, "パスワードの確認" %>
+        <div class="ui left icon input">
+          <%= f.password_field :password_confirmation, placeholder: "パスワード確認" %>
+          <i class="lock icon"></i>
+        </div>
+      </div>
+      <%= f.submit "登録", class: "ui orange submit button" %>
+    <% end %>
+</div>

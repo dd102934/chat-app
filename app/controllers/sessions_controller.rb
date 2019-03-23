@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       flash[:success] = "ログインしました"
-      redirect_to root_path
+      redirect_to chatroom_path
     else
       flash.now[:error] = "ログイン情報が正しくありません"
       render 'new'
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     flash[:success] = "ログアウトしました"
-    redirect_to login_path
+    redirect_to root_path
   end
 
   private
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
   def logged_in_redirect
     if logged_in?
       flash[:error] = "すでにログインしています"
-      redirect_to root_path
+      redirect_to chatroom_path
     end
   end
 
