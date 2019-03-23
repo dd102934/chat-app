@@ -7,6 +7,9 @@ class UsersController < ApplicationController
     @users = User.paginate(page: params[:page], per_page: 5)
   end
   
+  def show
+  end
+  
   def new
     @user = User.new
   end
@@ -18,6 +21,7 @@ class UsersController < ApplicationController
       flash[:success] = "#{@user.username}さん　チャットアプリの世界にようこそ！ "
       redirect_to chatroom_path
     else
+      flash.now[:error] = "登録情報が正しくありません"
       render 'new'
     end
   end

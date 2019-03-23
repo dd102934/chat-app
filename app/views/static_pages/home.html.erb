@@ -5,11 +5,13 @@
 <h4 class="ui center aligned medium icon header">
   <i class="orange user circle icon"></i>
    楽しくチャットしよう！</br>
-  <div class="ui buttons">
-    <%= link_to "ログアウト", logout_path, method: :delete, class: "ui inverted green button" %>
-    <div class="or"></div>
-    <%= link_to "ログイン", login_path, class: "ui inverted primary button" %>
-  </div>  
+   <% unless logged_in? %>
+     <div class="ui buttons">
+       <%= link_to "登録", signup_path, class: "ui inverted green button" %>
+       <div class="or"></div>
+       <%= link_to "ログイン", login_path, class: "ui inverted primary button" %>
+     </div>  
+  <% end %>
 </h4>
 
 
