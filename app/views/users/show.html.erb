@@ -1,0 +1,22 @@
+<div class="ui centered card">
+    <div class="image">
+      <%= image_tag 'pic.png'%>
+    </div>
+    <div class="content">
+      <a class="header"><%= @user.username %></a>
+      <div class="meta">
+        <span class="date">Joined in <%= @user.created_at.strftime('%Y/%m/%d') %></span>
+      </div>
+      <div class="description">
+        <%= @user.comment %>
+      </div>
+    </div>
+    <div class="content">
+      <span class="right floated">
+        <i class="heart outline like icon"></i>
+      　like機能未実装
+      </span>
+      <i class="comment icon"></i>
+      <%= pluralize(@user.messages.count, "message") %>
+    </div>
+</div>

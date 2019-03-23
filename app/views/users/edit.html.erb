@@ -1,0 +1,36 @@
+<h2 class="ui center aligned large header">
+  アカウント情報変更フォームへようこそ!
+</h2>
+
+<h4 class="ui center aligned medium icon header">
+  <i class="circular blue power off tiny icon"></i>
+</h4>
+<div class="ui placeholder segment">
+    <%= form_for(@user, html: {class: "ui form", role: "form"}) do |f| %>
+      <div class="field">
+        <%= f.label :username %>
+        <div class="ui left input">
+          <%= f.text_field :username, placeholder: "Username" %>
+        </div>
+      </div>
+      <div class="field">
+        <%= f.label :comment %>
+        <div class="ui left input">
+          <%= f.text_field :comment, placeholder: "Comment" %>
+        </div>
+      </div>
+      <div class="field">
+        <%= f.label :password, "パスワード" %>
+        <div class="ui left input">
+          <%= f.password_field :password, placeholder: "Password" %>
+        </div>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation, "パスワードの確認" %>
+        <div class="ui left input">
+          <%= f.password_field :password_confirmation, placeholder: "パスワード確認" %>
+        </div>
+      </div>
+      <%= f.submit "変更", class: "ui orange submit button" %>
+    <% end %>
+</div>

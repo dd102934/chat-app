@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
   
   def show
+    @user = User.find(params[:id])
   end
   
   def new
@@ -32,7 +33,7 @@ class UsersController < ApplicationController
   def update
     if @user.update(user_params)
       flash[:success] = "アカウントの情報を更新しました"
-      redirect_to articles_path
+      redirect_to @user
     else
       render 'edit'
     end
@@ -52,19 +53,19 @@ class UsersController < ApplicationController
   end
   
   def user_params
-    params.require(:user).permit(:username, :password,:password_confirmation)
+    params.require(:user).permit(:username, :comment, :password,:password_confirmation)
   end
   
   def require_same_user
     if current_user != @user && !current_user.admin?
-      flash[:danger] = "You can only edit your own account"
+      flash[:danger] = "自分自身のアカウントのみ変更できます"
       redirect_to root_path
     end
   end
   
   def require_admin
     if logged_in? && !current_user.admin?
-      flash[:danger] = "Only admin users can perform that action"
+      flash[:danger] = "管理者のみ実行可能なアクションです"
       redirect_to root_path
     end
   end

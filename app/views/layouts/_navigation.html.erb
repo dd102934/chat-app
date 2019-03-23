@@ -1,12 +1,13 @@
+<%= link_to "ホーム", root_path, class: "item" %>
 <%= link_to "チャットルーム", chatroom_path, class: "item" %>
-<a class="item">
-  メッセージ
-</a>
+<%= link_to "ユーザー一覧", users_path, class: "item"%>
 <div class="right menu">
   <div class="ui dropdown item">
     アカウント <i class="dropdown icon"></i>
     <div class="menu">
       <% if logged_in? %>
+        <%= link_to 'マイページ', current_user, class: "item" %>
+      　<%= link_to '編集', edit_user_path(current_user), class: "item"%>
         <%= link_to "ログアウト", logout_path, method: :delete, class: "item" %>
       <% else %>
         <%= link_to "ログイン", login_path, class: "item" %>
