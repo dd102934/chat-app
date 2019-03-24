@@ -10,6 +10,7 @@ if Rails.env == 'production'
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true)
+             
    (1..20).each do |i|
      user = User.first
      user.messages.create!(body: "本文#{i}")
