@@ -31,6 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'hirb'
 gem 'will_paginate', '3.1.5'
 gem 'will_paginate_semantic_ui'
+gem 'redis', '~> 3.0'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
