@@ -35,6 +35,7 @@ class UsersController < ApplicationController
       flash[:success] = "アカウントの情報を更新しました"
       redirect_to @user
     else
+      flash.now[:error] = "登録情報が正しくありません"
       render 'edit'
     end
   end

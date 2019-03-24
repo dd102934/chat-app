@@ -14,9 +14,9 @@
         </div>
       </div>
       <div class="field">
-        <%= f.label :comment %>
+        <%= f.label :comment,"コメント（10文字以下）" %>
         <div class="ui left input">
-          <%= f.text_field :comment, placeholder: "Comment" %>
+          <%= f.text_field :comment, placeholder: "10文字以下" %>
         </div>
       </div>
       <div class="field">
@@ -30,6 +30,7 @@
         <div class="ui left input">
           <%= f.password_field :password_confirmation, placeholder: "パスワード確認" %>
         </div>
+      </div>
       </div>
       <%= f.submit "変更", class: "ui orange submit button" %>
     <% end %>

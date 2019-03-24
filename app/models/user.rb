@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   validates :username, presence: true, length: { minimum: 3, maximum: 15 },
             uniqueness: { case_sensitive: false }
+  validates :comment,length: { maximum: 10 }
   has_many :messages,dependent:   :destroy
   has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
