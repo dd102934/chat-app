@@ -16,6 +16,9 @@
   </div>
   <% if !logged_in? %>
     <div class="item">
+      <%= link_to "登録", signup_path, class: "ui green button" %>
+    </div>
+    <div class="item">
       <%= link_to "ログイン", login_path, class: "ui primary button" %>
     </div>
   <% end %>

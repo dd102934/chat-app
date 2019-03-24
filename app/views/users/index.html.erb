@@ -5,9 +5,13 @@
     <div class="content">
       <div class="header">
         <%= link_to user.username, user_path(user) %>
+    <% if logged_in? && current_user.admin? %>
+      <%= link_to '削除', user, class: 'ui mini inverted red button', method: :delete,data: {confirm: "削除してもよろしいですか？"} %></td>
+    <% end %>
       </div>
        <%= pluralize(user.messages.count, "message") %>
     </div>
+    
   </div>
   <% end %>
 </div>

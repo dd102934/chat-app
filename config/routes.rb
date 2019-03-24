@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get  '/signup',    to: 'users#new'
   post '/signup',    to: 'users#create'
   resources :users
+  resources :relationships,   only: [:create, :destroy]
   
   
   mount ActionCable.server, at: '/cable'

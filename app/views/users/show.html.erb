@@ -13,10 +13,25 @@
     </div>
     <div class="content">
       <span class="right floated">
-        <i class="heart outline like icon"></i>
-      　like機能未実装
-      </span>
       <i class="comment icon"></i>
       <%= pluralize(@user.messages.count, "message") %>
+      </span>
+    </div>
+    <% if logged_in? %>
+      <% unless current_user?(@user) %>
+      <div class="content centered">
+        <div id="follow_form">
+          <% if current_user.following?(@user) %>
+            <%= render 'unfollow' %>
+          <% else %>
+            <%= render 'follow' %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
     </div>
 </div>
+
+    
+
+  
