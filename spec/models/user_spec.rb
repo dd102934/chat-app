@@ -15,5 +15,6 @@ RSpec.describe User, type: :model do
 
   it { is_expected.to validate_presence_of :username }
   it { is_expected.to validate_uniqueness_of(:username).case_insensitive }
+  it { should validate_length_of(:username).is_at_least(1).is_at_most(15)}
   it { should validate_length_of(:comment).is_at_most(10) }
 end

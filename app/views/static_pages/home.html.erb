@@ -22,28 +22,52 @@
   <div class="ui two column very relaxed stackable grid">
     <div class="column">
       <div class="ui relaxed divided list">
-        <% @messages1.each do |index1| %>
         <div class="item">
           <i class="large github middle aligned icon"></i>
           <div class="content">
-            <div class="header">Username/<%= index1.user.username %></div>
-            <div class="description">ChatMessage: <%= index1.body %></div>
+            <div class="header">Username/田中</div>
+            <div class="description">ChatMessage:おはようございます！</div>
           </div>
         </div>
-        <% end %>
+        <div class="item">
+          <i class="large github middle aligned icon"></i>
+          <div class="content">
+            <div class="header">Username/鈴木</div>
+            <div class="description">ChatMessage:こんにちは！ </div>
+          </div>
+        </div>
+        <div class="item">
+          <i class="large github middle aligned icon"></i>
+          <div class="content">
+            <div class="header">Username/佐藤</div>
+            <div class="description">ChatMessage:こんばんは！</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="middle aligned column">
       <div class="ui relaxed divided list">
-       <% @messages2.each do |index2| %>  
        <div class="item">
           <i class="large github middle aligned icon"></i>
           <div class="content">
-            <div class="header">Username/<%= index2.user.username %></div>
-            <div class="description">ChatMessage: <%= index2.body %></div>
+            <div class="header">Username/Jacob</div>
+            <div class="description">ChatMessage:Good morning</div>
           </div>
-        </div>
-        <% end %>
+       </div>
+      <div class="item">
+          <i class="large github middle aligned icon"></i>
+          <div class="content">
+            <div class="header">Username/Noah</div>
+            <div class="description">ChatMessage:Hello</div>
+          </div>
+       </div>
+       <div class="item">
+          <i class="large github middle aligned icon"></i>
+          <div class="content">
+            <div class="header">Username/Lucas</div>
+            <div class="description">ChatMessage:Good evening</div>
+          </div>
+       </div>
       </div>
     </div>
   </div>
